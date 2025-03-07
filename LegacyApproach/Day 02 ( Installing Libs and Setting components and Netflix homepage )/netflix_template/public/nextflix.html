@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    
+    
+    <script src="../node_modules/react/umd/react.development.js"></script>
+    <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="../node_modules/@babel/standalone/babel.js"></script>
+    
+    <style>
+        .bg-content{
+            background-image: url(./images/banner.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+        .bg-shade{
+            background-color: rgba(0, 0, 0, 0.6);
+            height: 100vh;
+        }
+        header{
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        main{
+            margin-top: 175px;
+        }
+        .register-area{
+            margin-top: 25px;
+        }
+    </style>
+
+    <script type="text/babel">
+        function NetflixIndex(){
+            return (
+                <div className="bg-content">
+                    <div className="bg-shade">
+                        <NetflixHeader />
+                        <NetflixMain />        
+                    </div>
+                </div>
+            )
+        }
+        function NetflixHeader(){
+            return (
+                    <header>
+                        <div>
+                            <span className="text-danger fs-1 fw-bold">NETFLIX</span>
+                        </div>
+                        <div>
+                            <div className="input-group"> 
+                                <span class="bi bi-translate input-group-text"></span>
+                                <select>
+                                    <option>Language</option>
+                                    <option>English</option>
+                                    <option>తెలుగు</option>
+                                    <option>தமிழ்</option>
+                                    <option>हिंदी</option>
+                                </select>
+                                <button className="btn btn-danger ms-2" >SignIn</button>
+                            </div>
+                        </div>
+                    </header>
+            )
+        }
+        function NetflixMain(){
+            return (
+                <main className="text-white text-center">
+                    <div>
+                        <div className="display-5 fw-bolder">
+                            Unlimited movies, TV shows and more
+                        </div>    
+                        <div className="h3">
+                            Watch anywhere. Cancel anytime.    
+                        </div>
+                    </div>
+                    <NetflixRegister />
+                </main>
+            )
+        }
+        function NetflixRegister(){
+            return (
+                <div className="register-area">
+                    <p className="h5">Ready to watch? Enter your email to create or restart your membership.</p>
+                    <div className="d-flex justify-content-center">
+                        <form className="input-group input-group-lg w-50">
+                            <input type="email" placeholder="Email Address" className="form-control" />   
+                            <button className="btn btn-danger">Get Started <span className="bi bi-chevron-right"></span></button>     
+                        </form>
+                    </div>
+                </div>
+            )
+        }
+        ReactDOM.render(<NetflixIndex />,document.getElementById("root"));
+    </script>
+    
+    <title>Netflix Template</title>
+</head>
+<body>
+    <noscript>Please enable JavaScript on your browser.</noscript>
+    <div id="root">
+
+    </div>
+</body>
+</html>
